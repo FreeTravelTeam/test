@@ -1,0 +1,56 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+<<<<<<< HEAD
+<<<<<<< HEAD
+  image: MyString
+  body: MyText
+  price: 1
+  from_date: MyString
+  to_date: MyString
+  country: MyString
+  region: MyString
+  safety_info: MyString
+  travel_item: MyString
+  user_id: 1
+
+two:
+  image: MyString
+  body: MyText
+  price: 1
+  from_date: MyString
+  to_date: MyString
+  country: MyString
+  region: MyString
+  safety_info: MyString
+  travel_item: MyString
+=======
+=======
+>>>>>>> 01ec974cbebfc94bcdfc783aa6d3b2b4fc2775e2
+  body: MyText
+  image: MyString
+  price: 1
+  from_date: 2017-02-14 06:37:31
+  to_date: 2017-02-14 06:37:31
+  country: MyString
+  region: MyString
+  safety_info: MyText
+  travel_item: MyText
+  user_id: 1
+
+two:
+  body: MyText
+  image: MyString
+  price: 1
+  from_date: 2017-02-14 06:37:31
+  to_date: 2017-02-14 06:37:31
+  country: MyString
+  region: MyString
+  safety_info: MyText
+  travel_item: MyText
+<<<<<<< HEAD
+>>>>>>> 4024a8a4652e15fd80e3b95d93108646329bafcc
+=======
+
+>>>>>>> 01ec974cbebfc94bcdfc783aa6d3b2b4fc2775e2
+  user_id: 1

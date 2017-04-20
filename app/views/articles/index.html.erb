@@ -1,0 +1,78 @@
+<%= render 'header' %>
+
+<div class="ind-main-img">
+	<%= image_tag "photo.jpg", class: "ind-main-img" %>
+</div>
+
+<!-- 一覧セクション -->
+<hr>
+<section class="index-sec clearfix">
+	<div class="index-wrapper1 container">
+		<div class="row">
+		<% @articles.each do |article| %>
+			<div class="col-md-3 col-sm-6 col-xs-12 ind-box">
+				<p class="index-img"><%= image_tag article.image, class: "i-img" %></p>
+				<div class="index-cont">
+					<h3 class="ind-title"><%= article.title %></h3>
+					<p class="ind-title">-　<%= article.region %></p>
+					<p class="ind-title">-　￥<%= article.price %></p>
+					<p class="like">
+						<i class="fa fa-heart"></i>
+						<%= article.likes.count %>
+					</p>
+					<%= link_to article_path(article) do %>
+					<span class="btn btn-default">Read More</span>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+		</div>
+	</div>
+	<div class="index-wrapper2 container">
+		<div class="search">
+			<%= form_tag(search_path, method: :get) do %>
+	      	<div class="modal-body">
+	        	<p class="search-form">
+	          タイトル検索<br>
+	          <%= text_field_tag :title %>
+	        	</p>
+	      	</div>
+      		<div class="modal-body">
+        		<p class="search-form">
+          			国で検索<br>
+          		<%= text_field_tag :country %>
+        		</p>
+      		</div>
+      		<div class="modal-body">
+	        	<p class="search-form">
+		          予算で検索<br>
+		          <%= text_field_tag :price %>
+	        	</p>
+      		</div>
+	        <p class="search-btn">
+	          	<%= submit_tag '検索', class: "btn btn-default" %>
+	        	</p>
+      		<% end %>
+		</div>
+		<div class="arrow_box">
+				New!!
+		</div>
+		<% @new_articles.each do |article| %>
+			<div class="new-inde row clearfix">
+				<p class="index-img2 col-md-5 col-sm-12"><%= image_tag article.image, class: "n-img" %></p>
+				<div class="index-cont2 col-md-7 col-sm-12">
+					<h4 class="ind-title"><%= article.title %>
+					</h4>
+					<p class="ind-title2">-　<%= article.region %></p>
+					<p class="ind-title2">-　￥<%= article.price %></p>
+					<%= link_to article_path(article) do %>
+					<span class="btn-md btn-default">Read More</span>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</section>
+<%= paginate @articles %>
+
+  

@@ -1,0 +1,52 @@
+
+<%= render 'articles/header' %>
+<div class="container">
+	<div class="row">
+		<div class="my-info col-md-3">
+		 	<h3 class="panel-heading">NAME</h3>
+			<h4 class="well"><%= @user.name %></h4>
+		 </div>
+		 <div class="col-md-9">
+			<ul class="nav nav-tabs">
+	  			<li class="users_show_text active"><a data-toggle="tab" href="#tab1">投稿した記事</a></li>
+		  		<li class="users_show_text"><a data-toggle="tab" href="#tab2">いいねした記事</a></li>
+   			</ul>
+  	 		<div class="tab-content" style="height: 800px;">
+  	 			<div class="tab-pane fade in active" id="tab1">
+	  	 			<div class="row">
+	 					<% @artcles.each do |article| %>
+	 						<div class="col-sm-4">
+	   					 		<p><%= link_to article.title ,article_path(article.id) %></p>
+	   			 				<div><%= image_tag article.image.url, class: "users-like-img" %></div>
+	  		  					<p><i class="fa fa-heart"></i><%= article.likes.count %></p>
+	  		  				</div>
+	  		  			<% end %>
+	 				</div>
+ 				</div>
+ 				<div class="tab-pane fade" id="tab2">
+ 					<div class="no-article row">
+   						<% if @user.likes.empty? %>
+   							<div class="list-group-item col-md-12">
+    							まだお気に入りした記事はありません。
+	  						</div>
+	  					<% else %>
+		  					<% @user.likes.map { |f| f.article }.each do |article| %>
+	      						<div class="article-image col-md-6 col-lg-4">
+	      						<p>
+	      						<%= image_tag article.image.url, class: "users-like-img" %>
+	      						</p>
+	      						<%= link_to article.title, article_path(article) %>
+	      						</div> 
+	 						<% end %>
+						<% end %>
+					</div>
+	 			</div>
+ 			</div>
+   		</div>
+   	</div>
+</div>
+
+
+
+    
+

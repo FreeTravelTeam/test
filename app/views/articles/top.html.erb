@@ -1,0 +1,67 @@
+ <div class="articles-top">
+ 	<div class="container-fulid">
+ 		<div class="row">
+  	  		<div class="parallax-window-top" data-parallax="scroll" data-image-src="<%= asset_path "london.jpg" %>">
+     				<div class="top-title col-lg-6">recuerdo</div>
+     			</div>
+    		</div>
+			<section class="top-sec">
+				<div class="page-top-scroll">
+					<p id="page-top"><a href="#wrap">See more</a></p>
+						<div id="content">
+							<i id="rect" class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+						</div>
+					</div>
+			</section>
+			<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path "prague.jpg" %>"></div>
+				<div class="top-sec low">
+					<div class="top-sec-sentences-btn col-md-4">
+						<div class="top-sec-sentences">	
+							<a href="#xxx">Souvenir story</a>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+						</div>
+						<div class="btn05">
+							<%= link_to articles_path do %>
+    							<span class="front">Travels</span>
+    							<span class="back">Travels</span>
+    						<% end %>
+						</div>
+					</div>
+					<div class="top-img col-md-4">
+						<img src="<%= asset_path "port05.jpg" %>" class='img-thumbnail' alt="Cinque Terre" width="360" height="250">
+					</div>
+					<div class="top-img col-md-4">
+						<img src="<%= asset_path "port06.jpg" %>" class='img-thumbnail' alt="Cinque Terre" width="360" height="250">
+					</div>
+				</div>
+			<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path "krakow.jpg" %>"></div>
+					<div class="top-sec row">
+						<div class="second-top-img1 col-md-4">
+							<img src="<%= asset_path "directory.jpg" %>" class='img-thumbnail' alt="Cinque Terre" width="350" height="150" style="margin-left: 40px;">
+						</div>
+						<div class="second-top-img2 col-md-4">
+							<img src="<%= asset_path "luggage.jpg" %>" class='img-thumbnail' alt="Cinque Terre" width="360" height="250">
+						</div>
+						<div class="top-sec-sentences-btn col-md-4">
+							<div class="second">
+								<img class= "logo-img" src="<%= asset_path "logo.png" %>">	
+								<a href="#xxx">RECUERDO</a>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+							</div>
+						</div>
+					</div>
+				<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path "night.jpg" %>"></div>
+				<div class="top-sec third row">
+					
+						<% if user_signed_in? %>
+              				<div class="col-md-4 logout-user"><%= link_to "Create Travel", new_article_path, class: "link-button" %></div>
+                			<div class="col-md-4 logout-user"><%= link_to "My Page", user_path(current_user.id), class: "link-button" %></div>
+               				<div class="col-md-4 logout-user"> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "link-button"%></div>
+         				 <% else %>
+              				<div class="col-md-6 login-user"><%= link_to "Sign In", new_user_session_path, class: "link-button" %></div>
+                			<div class="col-md-6 login-user"><%= link_to "Sign Up", new_user_registration_path, class: "link-button" %></div>
+        			 	 <% end %>
+		  		</div>
+		<div class="parallax-window" data-parallax="scroll" data-image-src="<%= asset_path "clouds.jpg" %>"></div>
+	</div>
+</div>

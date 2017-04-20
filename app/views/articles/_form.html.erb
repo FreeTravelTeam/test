@@ -1,0 +1,102 @@
+
+<div class="form-wrapper">
+  <div class="create-title">
+    <h1>Create Story</h1> 
+  </div>
+
+  <hr>
+
+  <%= form_for @article do |f| %>
+  　　<%= @msg %>
+
+  <section class="main-article-form">
+    <div class="form-infoarea clearfix" style="padding-bottom: 50px;">
+      <div class="info-left col-sm-5 col-xs-12">
+      　 <p>
+          <%= f.label :title %> 
+          <%= f.text_field :title, placeholder: "Title" %>
+        </p>
+        <p>
+      		<%= f.label :MainImage, "MainImage(一覧に表示されます)" %>
+      		<%= f.file_field :image %>
+      	</p>
+      	<p><%= f.label :from_date, 'Start' %><br>
+           <%= raw sprintf(
+            f.datetime_select(
+               :from_date,# プロパティ名
+              {
+                start_year:     Time.zone.now.prev_year.year,# 選択可能な開始年
+                end_year:       Time.zone.now.next_year.year,# 選択可能な終了年
+                default:        Time.zone.now,# デフォルトの年
+                #use_two_digit_numbers: true,# 月日を2桁の値で表示
+                #date_separator: '%s',# 年, 月
+                #datetime_separator: '%s',# 日
+                #time_separator: '%s'# 時
+              },# オプション
+              { class: 'date-select' }# htmlオプションを指定する場合は別で指定
+            ),
+            '年 ', '月 ', '日 ', '時') + '分'# 分 は最後につけ加えられる
+           %>
+        	</p>
+          <p>
+            <%= f.label :price %>
+            ￥<%= f.text_field :price, placeholder: "10000" %>
+          </p>
+        </div>
+        <div class="info-right col-sm-7 col-xs-12">
+      		<p>
+      			<%= f.label :country %>
+      			<%= f.text_field :country, placeholder: "日本" %>
+      		</p>
+      		<p>
+      			<%= f.label :region %>
+      			<%= f.text_field :region, placeholder: "東京" %>
+      		</p>
+      		<p>
+      			<%= f.label :travel_item %>
+      			<%= f.text_field :travel_item, placeholder: "地図、etc" %>
+      		</p>
+      		<p>
+      			<%= f.label :safety_info, "これから行く人へ一言" %>
+      			<%= f.text_field :safety_info, placeholder: "行ってらっしゃい！！" %>
+      		</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="form-bodyarea">
+
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#editor">エディタ</a></li>
+          <li><a data-toggle="tab" href="#mkdown">マークダウン</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="editor" class="tab-pane fade in active">
+            <p>
+              <%= f.cktext_area :body, class: "editor" %>
+            </p>
+
+            <hr>
+
+            <p class="article-submit">
+              <%= f.submit "Submit", class: "btn btn-default" %>
+            </p>
+          </div>
+          <div id="mkdown" class="tab-pane fade">
+            <p>
+              <%= f.text_area :body, as: :pagedown, input_html: { preview: true, rows: 20 }, class: "mk-editor" %>
+            </p>
+
+            <hr>
+
+            <p class="article-submit">
+              <%= f.submit "Submit", class: "btn btn-default" %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <% end %>
+</div>

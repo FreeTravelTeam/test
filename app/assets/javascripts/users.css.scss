@@ -1,0 +1,39 @@
+.log-sec{
+	margin: 0;
+	height: 100vh;
+	background-image: image-url("diary_book.jpg");
+	background-size: cover;
+
+		.login-box{
+			width: 50%;
+			height: 500px;
+			margin: auto;
+			color: #696969;
+			padding-top: 70px;
+
+			.login{
+				width: 60%;
+				margin: 60px auto;
+				padding: 25px 45px 30px;
+				border-radius: 30px;
+				background-color: rgba( 179, 179, 179, 0.9 );
+				box-shadow: 5px 5px;
+
+				.app-logo{
+					display: block;
+					height: 55px;
+					width: 90%;
+					margin: 0 auto;
+					margin-bottom: 30px;
+				}
+
+				.field{
+					padding-top: 20px;
+				}
+				.ren-link{
+					border-bottom: dotted 2px #d4d9d6;
+					padding-bottom: 20px;
+				}
+			}
+		}
+}

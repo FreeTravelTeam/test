@@ -1,0 +1,46 @@
+<header id="header" class="main-head">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to "RECERDO", root_path, class: "navbar-brand" %>
+        </div>
+            <ul class="nav navbar-nav">
+              <li class=""><%= link_to "Stories", articles_path %></li>
+          <% if user_signed_in? %>
+                <li class=""><%= link_to "Create Story", new_article_path %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                  <li>
+                    <%= link_to user_path(current_user.id) do %>
+                      <span class="glyphicon glyphicon-user">　My Stories</span>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                      <span class="glyphicon glyphicon-log-out">　Sign Out</span>
+                    <% end %>
+                  </li>
+            </ul>
+          <% else %>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Travels", articles_path %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to new_user_session_path do %>
+                  <span class="glyphicon glyphicon-log-in">　Sign In</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_registration_path do %>
+                  <span class="glyphicon glyphicon-pencil">　Sign Up</span>
+                <% end %>
+              </li>
+            </ul>
+
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+</header>
+

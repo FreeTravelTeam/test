@@ -1,0 +1,64 @@
+ <%= render 'header' %>
+
+ <hr>
+<div class="show-wrapper container">
+	<section class="show_article row">
+		<div class="show_side-article col-sm-3">
+			<div class="show_side-username">
+				<p class="show_username"><%= link_to @user.name, user_path(@user.id) %>
+				</p>
+			</div>
+			<div class="arrow_box">
+				Info!
+			</div>
+			<div class="show_side-info" style="margin-top: 20px;">
+				<span class="infotitle">場所</span>
+				<p><%= @article.country %>,<%= @article.region %></p>
+			</div>
+			<div class="show_side-info">
+				<span class="infotitle">予算</span>
+				<p><%= @article.price %></p>
+			</div>
+			<div class="show_side-info">
+				<span class="infotitle">日にち</span>
+				<p><%= @article.from_date %></p>
+			</div>
+			<div class="show_side-info">
+				<span class="infotitle">重要な持ち物</span>
+				<p><%= @article.travel_item %></p>
+			</div>
+			<div class="show_side-info">
+				<span class="infotitle">これから行く人へ一言</span>
+				<p><%= @article.safety_info %></p>
+			</div>
+				<%= render 'likes/like', article: @article %>　
+				<% if @article.user_id == current_user.id %>
+					<%= link_to edit_article_path(@article.id) do %>
+						<span class="glyphicon glyphicon-pencil" style="font-size: 25px;"></span>
+					<% end %>　
+					<%= link_to article_path(@article.id), method: :delete, "data-confirm" => "Are you sure?" do %>
+						<span class="glyphicon glyphicon-trash" style="font-size: 25px;"></span>
+					<% end %>
+				<% end %>
+				<div class="arrow_box">
+				Share!
+				</div>
+			<h3 class="show_share-btn">
+				<%= social_share_button_tag(@article.id) %>
+			</h3>
+		</div>
+		<div class="show_body-article col-sm-9">
+			<div class="show_body">
+				<h1 class="show_body-title"><%= @article.title %>
+				</h1>
+				<span class="cre-time"><%= @article.updated_at %>
+				</span>
+				<div class="show_body-body">
+					<p class="body-body">
+					<%= markdown(@article.body).html_safe %>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

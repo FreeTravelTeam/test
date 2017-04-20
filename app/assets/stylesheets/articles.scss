@@ -1,0 +1,364 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$fukidasi-cl: #1d1f42;
+
+//topページ
+.parallax-window-top{
+	min-height: 710px;
+	background: transparent;
+	
+}
+.parallax-window {
+    min-height: 500px;
+    background: transparent;
+}
+.top-title{
+	width: 33.3333%;
+	height: 33.3333%;
+	color: #fffacd;
+	font-size: 150px;
+	font-family: 'Playfair Display', serif;
+}
+.top-sec{
+	height: 280px;
+	background-color: #eeeeee;
+}
+.page-top-scroll{
+	text-align: center;
+	width: 100%;
+}
+ #page-top {
+    bottom: 20px;
+    padding: 10px;
+    right: 20px;
+    font-size: 90%;
+}
+#page-top a {
+    background-color: #696969;
+    text-decoration: none;
+    color: #fff;
+    width: 150px;
+    padding: 30px 0;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+}
+#page-top a:hover {
+    text-decoration: none;
+    background: #999;
+}
+
+
+/*共通ヘッダー*/
+#header{
+	padding-bottom: 80px;
+	.navbar-default{
+		width: 100%;
+		position: fixed;
+		z-index: 10;
+	}
+}
+
+#rect {
+	margin: 0 auto;
+	font-size: 55px;
+	padding-top: 30px;
+    text-align:center;
+}
+
+.top-sec-sentences-btn{
+	display: inline-block;
+	width: 33.3333%;
+	height: 100%;
+}
+.top-sec-sentences{
+	width: 100%;
+	font-family: 'Playfair Display', serif;
+}
+.second{
+	width: 100%;
+	font-family: 'Playfair Display', serif;
+}
+.top-sec-sentences a{
+	width: 100%;
+	height: 40px;
+	color: #696969;
+	font-size: 45px;
+	line-height: 100px;
+}
+.second a{
+	width: 100%;
+	height: 40px;
+	color: #696969;
+	font-size: 45px;
+	line-height: 100px;
+}
+.btn05 {
+    display: block;
+    text-decoration: none;
+    width: 200px;
+    position: relative;
+    perspective: 300px;
+    -webkit-perspective: 300px;
+}
+ 
+.btn05 span {
+	color: #fff;
+    text-align: center;
+    display: block;
+    width: 200px;
+    padding: 30px 0;
+    background-color: #696969;
+    position:absolute;
+    top: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: 0.8s;
+}
+.btn05 .back {
+    background-color: #696969;
+    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+}
+ 
+.btn05:hover .front {
+    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+}
+ 
+.btn05:hover .back {
+    transform:rotateY(360deg);
+    -webkit-transform:rotateY(360deg);
+}
+.top-img{
+	margin-top: 20px;
+}
+.second-top-img1{
+	margin-top: 10px;
+}
+.second-top-img2{
+	margin-top: 50px;
+}
+.logo-img{
+	display: block;
+	margin-top: 10px;
+}
+.img-thumbnail {
+  display: inline-block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.link-button {
+	margin: 17px;
+	margin-left: 150px;
+	border-radius: 4px;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+    width: 200px;
+    font-size: 18px;
+	background-color: #333;
+	color: #fff;
+}
+.link-button:hover {
+	color: #fff;
+	transform: scale(1.05);
+}
+
+.navbar-default{
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+}
+
+.third{
+	height: 88px;
+}
+
+.login-user{
+	margin: 0 auto;
+}
+.logout-user{
+	margin: 0 auto;
+}
+/*render.article-form*/
+
+.form-wrapper{
+	width: 75%;
+	margin: 40px auto;
+	padding: 0 20px 60px;
+	border-radius: 30px;
+	background-color: lighten( #9e9e9e, 30%);
+	box-shadow: 5px 5px;
+	color: gray;
+}
+
+.create-title{
+	text-align: center;
+	font-family: 'Ranga', cursive;
+	opacity: 0.8;
+	padding: 50px 0 20px;
+}
+
+.main-article-form{
+	margin: 10px auto;
+}
+.mk-editor{
+	display: block;
+	width: 80%;
+	height: 400px;
+	margin: 10px auto;
+	border-radius: 10px;
+}
+
+/*一覧ページ*/
+.ind-main-img{
+	width: 100%;
+	height: 550px;
+	opacity: .9;
+}
+.inde-title{
+	color: #c0c0c0;
+	font-weight: bold;
+}
+.index-sec{
+	width: 96%;
+	margin: 20px auto;
+
+	.index-wrapper1{
+		float: left;
+		width: 70%;
+
+		.ind-box{
+			height: 500px;
+		}
+
+		.i-img{
+			width: 100%;
+			height: 200px;
+			border-radius: 10px;
+		}
+	}
+
+	.index-wrapper2{
+		float: left;
+		width: 30%;
+
+		.new-inde{
+			margin: 15px 0;
+			padding: 10px;
+			border-bottom: dotted gray 2px;
+			border-top: dotted #696969 2px;
+
+			.index-img2{
+				height: 100px;
+
+				.n-img{
+					width: 100%;
+					height: 100px;
+				}
+			}
+			.index-cont2{
+				text-align: center;
+			}
+		}
+	}
+}
+
+/*詳細ページ*/
+/*吹き出し*/
+.arrow_box {
+	position: relative;
+	padding: 5px;
+	margin: 35px auto 5px;
+	text-align: center;
+	color: white;
+	background: $fukidasi-cl;
+	border: 1px solid #fffaf7;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(29, 31, 66, 0);
+	border-top-color: #1d1f42;
+	border-width: 8px;
+	margin-left: -8px;
+}
+.arrow_box:before {
+	border-color: rgba(255, 250, 247, 0);
+	border-top-color: #fffaf7;
+	border-width: 9px;
+	margin-left: -9px;
+}
+
+.show_side-username{
+	font-size: 25px;
+}
+.show_side-article{
+	padding: 18px 10x;
+
+	.show_side-info{
+		padding: 7px 0;
+		font-size: 15px;
+	}
+	.show_share-btn {
+		width: 30%;
+		margin: 20px auto;
+	}
+}
+.cre-time{
+		padding: 5px;
+		color: white;
+		background: $fukidasi-cl;
+		border: 1px solid #5a4498;
+	}
+.show_body{
+	width: 90%;
+	margin: 10px auto;
+
+	.show_body-title{
+		padding: 0 5px 15px;
+		margin-top: 0;
+		color: black;
+		font-weight: bold;	
+	}
+	.show_article-img{
+		padding: 15px 0;
+	}
+	.show_body-body{
+		border-top: solid #e6e6e6 4px;
+		border-bottom: solid #e6e6e6 4px;
+		height: 900px;
+		overflow: scroll;
+
+		.body-body{
+			width: 95%;
+			margin: 10px auto;
+		}
+	}
+}
+
+
+
+

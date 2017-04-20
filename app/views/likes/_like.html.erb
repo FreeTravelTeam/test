@@ -1,0 +1,11 @@
+
+  <!-- ログインしているユーザーがいいねしてるかどうか -->
+  <% if article.like_user?(current_user.id) %>
+    <%= link_to article_likes_path(article.id), method: :delete, id: "like-button", remote: true do %>
+      <i class="fa fa-heart fa-2x"></i>
+    <% end %>
+  <% else %>
+    <%= link_to article_likes_path(article.id), method: :post, id: "like-button", remote: true do %>
+    <i class="fa fa-heart-o fa-2x"></i>
+    <% end %>
+  <% end %>
